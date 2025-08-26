@@ -1,0 +1,91 @@
+bE[0][1] = true;
+bE[1][0] = true;
+bE[1][2] = true;
+bE[2][1] = true;
+
+primer svodjenja sa gfg:
+bE[0][3] = true;
+bE[0][4] = true;
+bE[0][5] = true;
+bE[1][2] = true;
+bE[1][4] = true;
+bE[1][5] = true;
+bE[2][1] = true;
+bE[2][5] = true;
+bE[3][0] = true;
+bE[3][4] = true;
+bE[3][5] = true;
+bE[4][0] = true;
+bE[4][1] = true;
+bE[4][3] = true;
+bE[5][0] = true;
+bE[5][1] = true;
+bE[5][2] = true;
+bE[5][3] = true;
+
+3 uslov:
+
+for(nj=0; nj<nK; nj++){
+	for(ni=0; ni<nV; ni++){
+		for(nk=ni+1; nk<nV; nk++){
+			for(np=0; np<2*nN; np++) {
+				bC[nClauses][np] = false;
+		  	}
+			bC[nClauses][nj*2*nV+2*ni+1] = true;
+			bC[nClauses][nj*2*nV+2*nk+1] = true;
+			nClauses++;
+		}
+	}
+}
+
+print(nClauses);
+for(nj=5; nj<nClauses; nj++){
+	for(ni=0; ni<2*nN; ni++) {
+		print(bC[nj][ni]);
+	}
+	print(nj);
+}
+
+
+
+4 uslov:
+
+for(nj=0; nj<nK; nj++){
+	for(nl=nj+1; nl<nK; nl++){
+		for(ni=0; ni<nV; ni++){
+			for(nk=0; nk<nV; nk++){
+				if(!bE[ni][nk] && ni!=nk){
+					for(np=0; np<2*nN; np++) {
+						bC[nClauses][np] = false;
+				  	}
+					bC[nClauses][nj*nV+2*ni+1] = true;
+					bC[nClauses][nl*nV+2*nk+1] = true;
+					nClauses++;
+				}
+			}
+		}
+	}
+}
+
+leksikografsko uredjenje - samo 3 resenja:
+
+for(nj=0; nj<nK-1; nj++){
+  for(ni=0; ni<nV; ni++){
+    for(nk=0; nk<ni; nk++){
+      for(np=0; np<2*nN; np++) {
+        bC[nClauses][np] = false;
+      }
+      bC[nClauses][nj*2*nV+2*ni+1] = true;
+      bC[nClauses][(nj+1)*2*nV+2*nk+1] = true;
+      nClauses++;
+    }
+  }
+}
+
+print(nClauses);
+for(nj=12; nj<nClauses; nj++){
+	for(ni=0; ni<2*nN; ni++) {
+		print(bC[nj][ni]);
+	}
+	print(nj);
+}

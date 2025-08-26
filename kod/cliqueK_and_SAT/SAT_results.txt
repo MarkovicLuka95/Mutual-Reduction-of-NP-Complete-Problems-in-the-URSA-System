@@ -1,0 +1,206 @@
+URSA Benchmark (solver_template) vs MiniSat vs URSA Reduction (reduction_template)
+===============================================
+Started: 2025-08-25 20:58:38
+
+Category     | File                                | Variables | Clauses  | URSA     | MiniSat  | Reduction  | URSA Time  | MiniSat Time | Reduction Time
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+AIM          | aim-100-1_6-no-1.cnf                | 100       | 160      | UNSAT    | UNSAT    | UNSAT      | 1.119594   | 0.002918     | 96.228394     
+AIM          | aim-100-1_6-no-2.cnf                | 100       | 160      | UNSAT    | UNSAT    | UNSAT      | 0.980516   | 0.002964     | 78.025771     
+AIM          | aim-100-1_6-no-3.cnf                | 100       | 160      | UNSAT    | UNSAT    | UNSAT      | 1.025491   | 0.002658     | 74.949887     
+AIM          | aim-100-1_6-no-4.cnf                | 100       | 160      | UNSAT    | UNSAT    | UNSAT      | 0.921901   | 0.002658     | 49.623890     
+AIM          | aim-100-1_6-yes1-1.cnf              | 100       | 160      | SAT      | SAT      | SAT        | 0.943988   | 0.002551     | 74.825778     
+AIM          | aim-100-1_6-yes1-2.cnf              | 100       | 160      | SAT      | SAT      | SAT        | 0.906442   | 0.002595     | 70.424558     
+AIM          | aim-100-1_6-yes1-3.cnf              | 100       | 160      | SAT      | SAT      | SAT        | 0.908674   | 0.002733     | 70.718906     
+AIM          | aim-100-1_6-yes1-4.cnf              | 100       | 160      | SAT      | SAT      | SAT        | 0.894042   | 0.002771     | 54.666652     
+AIM          | aim-100-2_0-no-1.cnf                | 100       | 200      | UNSAT    | UNSAT    | UNSAT      | 1.118589   | 0.002610     | 126.736325    
+AIM          | aim-100-2_0-no-2.cnf                | 100       | 200      | UNSAT    | UNSAT    | UNSAT      | 1.164879   | 0.002644     | 142.176327    
+AIM          | aim-100-2_0-no-3.cnf                | 100       | 200      | UNSAT    | UNSAT    | UNSAT      | 1.219900   | 0.002593     | 127.680094    
+AIM          | aim-100-2_0-no-4.cnf                | 100       | 200      | UNSAT    | UNSAT    | UNSAT      | 1.137301   | 0.002659     | 122.484062    
+AIM          | aim-100-2_0-yes1-1.cnf              | 100       | 200      | SAT      | SAT      | SAT        | 1.149804   | 0.002651     | 114.974335    
+AIM          | aim-100-2_0-yes1-2.cnf              | 100       | 200      | SAT      | SAT      | SAT        | 1.131912   | 0.002773     | 143.006785    
+AIM          | aim-100-2_0-yes1-3.cnf              | 100       | 200      | SAT      | SAT      | SAT        | 1.161253   | 0.002658     | 137.865173    
+AIM          | aim-100-2_0-yes1-4.cnf              | 100       | 200      | SAT      | SAT      | TIMEOUT    | 1.465601   | 0.002607     | 150.000000    
+AIM          | aim-100-3_4-yes1-1.cnf              | 100       | 340      | SAT      | SAT      | TIMEOUT    | 2.688312   | 0.003243     | 150.000000    
+AIM          | aim-100-3_4-yes1-2.cnf              | 100       | 340      | SAT      | SAT      | TIMEOUT    | 1.966780   | 0.003019     | 150.000000    
+AIM          | aim-100-3_4-yes1-3.cnf              | 100       | 340      | SAT      | SAT      | TIMEOUT    | 1.929173   | 0.002978     | 150.000000    
+AIM          | aim-100-3_4-yes1-4.cnf              | 100       | 340      | SAT      | SAT      | TIMEOUT    | 2.353655   | 0.003484     | 150.000000    
+AIM          | aim-100-6_0-yes1-1.cnf              | 100       | 600      | SAT      | SAT      | TIMEOUT    | 3.480296   | 0.003387     | 150.000000    
+AIM          | aim-100-6_0-yes1-2.cnf              | 100       | 600      | SAT      | SAT      | TIMEOUT    | 3.759336   | 0.009758     | 150.000000    
+AIM          | aim-100-6_0-yes1-3.cnf              | 100       | 600      | SAT      | SAT      | TIMEOUT    | 3.764987   | 0.003363     | 150.000000    
+AIM          | aim-100-6_0-yes1-4.cnf              | 100       | 600      | SAT      | SAT      | TIMEOUT    | 3.984021   | 0.003375     | 150.000000    
+AIM          | aim-200-1_6-no-1.cnf                | 200       | 320      | UNSAT    | UNSAT    | TIMEOUT    | 3.991241   | 0.003478     | 150.000000    
+AIM          | aim-200-1_6-no-2.cnf                | 200       | 320      | UNSAT    | UNSAT    | TIMEOUT    | 4.812653   | 0.003707     | 150.000000    
+AIM          | aim-200-1_6-no-3.cnf                | 200       | 320      | UNSAT    | UNSAT    | TIMEOUT    | 4.027037   | 0.003537     | 150.000000    
+AIM          | aim-200-1_6-no-4.cnf                | 200       | 320      | UNSAT    | UNSAT    | TIMEOUT    | 3.887191   | 0.003511     | 150.000000    
+AIM          | aim-200-1_6-yes1-1.cnf              | 200       | 320      | SAT      | SAT      | TIMEOUT    | 3.793641   | 0.003255     | 150.000000    
+AIM          | aim-200-1_6-yes1-2.cnf              | 200       | 320      | SAT      | SAT      | TIMEOUT    | 3.837788   | 0.003281     | 150.000000    
+AIM          | aim-200-1_6-yes1-3.cnf              | 200       | 320      | SAT      | SAT      | TIMEOUT    | 3.795430   | 0.003238     | 150.000000    
+AIM          | aim-200-1_6-yes1-4.cnf              | 200       | 320      | SAT      | SAT      | TIMEOUT    | 4.260807   | 0.003570     | 150.000000    
+AIM          | aim-200-2_0-no-1.cnf                | 200       | 400      | UNSAT    | UNSAT    | TIMEOUT    | 4.852617   | 0.003420     | 150.000000    
+AIM          | aim-200-2_0-no-2.cnf                | 200       | 400      | UNSAT    | UNSAT    | TIMEOUT    | 4.884895   | 0.003503     | 150.000000    
+AIM          | aim-200-2_0-no-3.cnf                | 200       | 400      | UNSAT    | UNSAT    | TIMEOUT    | 6.479258   | 0.003918     | 150.000000    
+AIM          | aim-200-2_0-no-4.cnf                | 200       | 400      | UNSAT    | UNSAT    | TIMEOUT    | 5.205591   | 0.004015     | 150.000000    
+AIM          | aim-200-2_0-yes1-1.cnf              | 200       | 400      | SAT      | SAT      | TIMEOUT    | 5.030830   | 0.003743     | 150.000000    
+AIM          | aim-200-2_0-yes1-2.cnf              | 200       | 400      | SAT      | SAT      | TIMEOUT    | 5.102509   | 0.003563     | 150.000000    
+AIM          | aim-200-2_0-yes1-3.cnf              | 200       | 400      | SAT      | SAT      | TIMEOUT    | 5.192974   | 0.003829     | 150.000000    
+AIM          | aim-200-2_0-yes1-4.cnf              | 200       | 400      | SAT      | SAT      | TIMEOUT    | 5.292428   | 0.003884     | 150.000000    
+AIM          | aim-200-3_4-yes1-1.cnf              | 200       | 680      | SAT      | SAT      | TIMEOUT    | 9.138908   | 0.004262     | 150.000000    
+AIM          | aim-200-3_4-yes1-2.cnf              | 200       | 680      | SAT      | SAT      | TIMEOUT    | 8.562864   | 0.004438     | 150.000000    
+AIM          | aim-200-3_4-yes1-3.cnf              | 200       | 680      | SAT      | SAT      | TIMEOUT    | 11.270976  | 0.004649     | 150.000000    
+AIM          | aim-200-3_4-yes1-4.cnf              | 200       | 680      | SAT      | SAT      | TIMEOUT    | 12.731406  | 0.004910     | 150.000000    
+AIM          | aim-200-6_0-yes1-1.cnf              | 200       | 1200     | SAT      | SAT      | TIMEOUT    | 59.891448  | 0.011370     | 150.000000    
+AIM          | aim-200-6_0-yes1-2.cnf              | 200       | 1200     | SAT      | SAT      | TIMEOUT    | 17.535741  | 0.004796     | 150.000000    
+AIM          | aim-200-6_0-yes1-3.cnf              | 200       | 1200     | SAT      | SAT      | TIMEOUT    | 15.423020  | 0.004770     | 150.000000    
+AIM          | aim-200-6_0-yes1-4.cnf              | 200       | 1200     | SAT      | SAT      | TIMEOUT    | 16.696507  | 0.004745     | 150.000000    
+AIM          | aim-50-1_6-no-1.cnf                 | 50        | 80       | UNSAT    | UNSAT    | UNSAT      | 0.239703   | 0.002496     | 12.611004     
+AIM          | aim-50-1_6-no-2.cnf                 | 50        | 80       | UNSAT    | UNSAT    | UNSAT      | 0.241547   | 0.002561     | 12.776891     
+AIM          | aim-50-1_6-no-3.cnf                 | 50        | 80       | UNSAT    | UNSAT    | UNSAT      | 0.241395   | 0.002576     | 10.168198     
+AIM          | aim-50-1_6-no-4.cnf                 | 50        | 80       | UNSAT    | UNSAT    | UNSAT      | 0.241288   | 0.002584     | 8.817214      
+AIM          | aim-50-1_6-yes1-1.cnf               | 50        | 80       | SAT      | SAT      | SAT        | 0.246958   | 0.002509     | 11.886556     
+AIM          | aim-50-1_6-yes1-2.cnf               | 50        | 80       | SAT      | SAT      | SAT        | 0.340076   | 0.002732     | 9.197274      
+AIM          | aim-50-1_6-yes1-3.cnf               | 50        | 80       | SAT      | SAT      | SAT        | 0.242590   | 0.002625     | 8.837294      
+AIM          | aim-50-1_6-yes1-4.cnf               | 50        | 80       | SAT      | SAT      | SAT        | 0.255182   | 0.002554     | 7.812661      
+AIM          | aim-50-2_0-no-1.cnf                 | 50        | 100      | UNSAT    | UNSAT    | UNSAT      | 0.308621   | 0.002561     | 15.567183     
+AIM          | aim-50-2_0-no-2.cnf                 | 50        | 100      | UNSAT    | UNSAT    | UNSAT      | 0.313916   | 0.002645     | 13.744031     
+AIM          | aim-50-2_0-no-3.cnf                 | 50        | 100      | UNSAT    | UNSAT    | UNSAT      | 0.301289   | 0.002649     | 18.194317     
+AIM          | aim-50-2_0-no-4.cnf                 | 50        | 100      | UNSAT    | UNSAT    | UNSAT      | 0.299077   | 0.002553     | 15.553222     
+AIM          | aim-50-2_0-yes1-1.cnf               | 50        | 100      | SAT      | SAT      | SAT        | 0.304802   | 0.002559     | 18.823177     
+AIM          | aim-50-2_0-yes1-2.cnf               | 50        | 100      | SAT      | SAT      | SAT        | 0.301568   | 0.002555     | 19.479757     
+AIM          | aim-50-2_0-yes1-3.cnf               | 50        | 100      | SAT      | SAT      | SAT        | 0.326765   | 0.002553     | 26.201100     
+AIM          | aim-50-2_0-yes1-4.cnf               | 50        | 100      | SAT      | SAT      | SAT        | 0.310742   | 0.002542     | 15.006711     
+AIM          | aim-50-3_4-yes1-1.cnf               | 50        | 170      | SAT      | SAT      | SAT        | 0.526624   | 0.002572     | 68.676700     
+AIM          | aim-50-3_4-yes1-2.cnf               | 50        | 170      | SAT      | SAT      | SAT        | 0.555274   | 0.002633     | 67.095678     
+AIM          | aim-50-3_4-yes1-3.cnf               | 50        | 170      | SAT      | SAT      | SAT        | 0.501367   | 0.002541     | 60.815482     
+AIM          | aim-50-3_4-yes1-4.cnf               | 50        | 170      | SAT      | SAT      | SAT        | 0.482150   | 0.002561     | 71.467893     
+AIM          | aim-50-6_0-yes1-1.cnf               | 50        | 300      | SAT      | SAT      | TIMEOUT    | 0.853925   | 0.002587     | 150.000000    
+AIM          | aim-50-6_0-yes1-2.cnf               | 50        | 300      | SAT      | SAT      | TIMEOUT    | 0.830907   | 0.002566     | 150.000000    
+AIM          | aim-50-6_0-yes1-3.cnf               | 50        | 300      | SAT      | SAT      | TIMEOUT    | 0.852204   | 0.002634     | 150.000000    
+AIM          | aim-50-6_0-yes1-4.cnf               | 50        | 300      | SAT      | SAT      | TIMEOUT    | 0.857054   | 0.002667     | 150.000000    
+DUBOIS       | dubois100.cnf                       | 300       | 800      | UNSAT    | SAT      | TIMEOUT    | 15.000571  | 0.003937     | 150.000000    
+DUBOIS       | dubois20.cnf                        | 60        | 160      | UNSAT    | UNSAT    | UNSAT      | 0.841053   | 0.004422     | 77.117303     
+DUBOIS       | dubois21.cnf                        | 63        | 168      | UNSAT    | UNSAT    | TIMEOUT    | 0.618557   | 0.002561     | 150.000000    
+DUBOIS       | dubois22.cnf                        | 66        | 176      | UNSAT    | UNSAT    | UNSAT      | 0.664221   | 0.002574     | 98.449301     
+DUBOIS       | dubois23.cnf                        | 69        | 184      | UNSAT    | UNSAT    | UNSAT      | 0.864577   | 0.002874     | 130.215953    
+DUBOIS       | dubois24.cnf                        | 72        | 192      | UNSAT    | UNSAT    | UNSAT      | 0.912991   | 0.003062     | 127.820387    
+DUBOIS       | dubois25.cnf                        | 75        | 200      | UNSAT    | UNSAT    | UNSAT      | 1.004321   | 0.002872     | 135.276485    
+DUBOIS       | dubois26.cnf                        | 78        | 208      | UNSAT    | UNSAT    | UNSAT      | 0.964564   | 0.002687     | 126.301265    
+DUBOIS       | dubois27.cnf                        | 81        | 216      | UNSAT    | UNSAT    | TIMEOUT    | 1.011158   | 0.002590     | 150.000000    
+DUBOIS       | dubois28.cnf                        | 84        | 224      | UNSAT    | UNSAT    | TIMEOUT    | 1.106968   | 0.002634     | 150.000000    
+DUBOIS       | dubois29.cnf                        | 87        | 232      | UNSAT    | UNSAT    | TIMEOUT    | 1.226881   | 0.002691     | 150.000000    
+DUBOIS       | dubois30.cnf                        | 90        | 240      | UNSAT    | UNSAT    | TIMEOUT    | 1.410312   | 0.003274     | 150.000000    
+DUBOIS       | dubois50.cnf                        | 150       | 400      | UNSAT    | UNSAT    | TIMEOUT    | 4.073045   | 0.003332     | 150.000000    
+GCP          | g125.17.cnf                         | 2125      | 66272    | TIMEOUT  | TIMEOUT  | TIMEOUT    | 150.000000 | 150.000000   | 150.000000    
+GCP          | g125.18.cnf                         | 2250      | 70163    | TIMEOUT  | TIMEOUT  | TIMEOUT    | 150.000000 | 150.000000   | 150.000000    
+GCP          | g250.15.cnf                         | 3750      | 233965   | TIMEOUT  | TIMEOUT  | TIMEOUT    | 150.000000 | 150.000000   | 150.000000    
+GCP          | g250.29.cnf                         | 7250      | 454622   | TIMEOUT  | TIMEOUT  | TIMEOUT    | 150.000000 | 150.000000   | 150.000000    
+JNH          | jnh1.cnf                            | 100       | 850      | SAT      | SAT      | TIMEOUT    | 5.936479   | 0.004137     | 150.000000    
+JNH          | jnh10.cnf                           | 100       | 850      | UNSAT    | UNSAT    | TIMEOUT    | 5.762572   | 0.003923     | 150.000000    
+JNH          | jnh11.cnf                           | 100       | 850      | UNSAT    | UNSAT    | TIMEOUT    | 5.637097   | 0.010121     | 150.000000    
+JNH          | jnh12.cnf                           | 100       | 850      | SAT      | SAT      | TIMEOUT    | 5.790434   | 0.003829     | 150.000000    
+JNH          | jnh13.cnf                           | 100       | 850      | UNSAT    | UNSAT    | TIMEOUT    | 6.138241   | 0.004016     | 150.000000    
+JNH          | jnh14.cnf                           | 100       | 850      | UNSAT    | UNSAT    | TIMEOUT    | 5.967935   | 0.004040     | 150.000000    
+JNH          | jnh15.cnf                           | 100       | 850      | UNSAT    | UNSAT    | TIMEOUT    | 6.007682   | 0.003999     | 150.000000    
+JNH          | jnh16.cnf                           | 100       | 850      | UNSAT    | UNSAT    | TIMEOUT    | 6.053427   | 0.006417     | 150.000000    
+JNH          | jnh17.cnf                           | 100       | 850      | SAT      | SAT      | TIMEOUT    | 5.952312   | 0.004179     | 150.000000    
+JNH          | jnh18.cnf                           | 100       | 850      | UNSAT    | UNSAT    | TIMEOUT    | 5.881783   | 0.003866     | 150.000000    
+JNH          | jnh19.cnf                           | 100       | 850      | UNSAT    | UNSAT    | TIMEOUT    | 5.665365   | 0.003900     | 150.000000    
+JNH          | jnh2.cnf                            | 100       | 850      | UNSAT    | UNSAT    | TIMEOUT    | 5.799739   | 0.003957     | 150.000000    
+JNH          | jnh20.cnf                           | 100       | 850      | UNSAT    | UNSAT    | TIMEOUT    | 5.702486   | 0.004161     | 150.000000    
+JNH          | jnh201.cnf                          | 100       | 800      | SAT      | SAT      | TIMEOUT    | 5.697109   | 0.003855     | 150.000000    
+JNH          | jnh202.cnf                          | 100       | 800      | UNSAT    | UNSAT    | TIMEOUT    | 5.370257   | 0.003746     | 150.000000    
+JNH          | jnh203.cnf                          | 100       | 800      | UNSAT    | UNSAT    | TIMEOUT    | 5.206454   | 0.003680     | 150.000000    
+JNH          | jnh204.cnf                          | 100       | 800      | SAT      | SAT      | TIMEOUT    | 5.623665   | 0.003917     | 150.000000    
+JNH          | jnh205.cnf                          | 100       | 800      | SAT      | SAT      | TIMEOUT    | 5.562296   | 0.003729     | 150.000000    
+JNH          | jnh206.cnf                          | 100       | 800      | UNSAT    | UNSAT    | TIMEOUT    | 5.397780   | 0.003855     | 150.000000    
+JNH          | jnh207.cnf                          | 100       | 800      | SAT      | SAT      | TIMEOUT    | 5.223723   | 0.003691     | 150.000000    
+JNH          | jnh208.cnf                          | 100       | 800      | UNSAT    | UNSAT    | TIMEOUT    | 5.316601   | 0.003677     | 150.000000    
+JNH          | jnh209.cnf                          | 100       | 800      | SAT      | SAT      | TIMEOUT    | 5.679517   | 0.003732     | 150.000000    
+JNH          | jnh210.cnf                          | 100       | 800      | SAT      | SAT      | TIMEOUT    | 5.503618   | 0.003689     | 150.000000    
+JNH          | jnh211.cnf                          | 100       | 800      | UNSAT    | UNSAT    | TIMEOUT    | 5.165856   | 0.003657     | 150.000000    
+JNH          | jnh212.cnf                          | 100       | 800      | SAT      | SAT      | TIMEOUT    | 5.403436   | 0.003988     | 150.000000    
+JNH          | jnh213.cnf                          | 100       | 800      | SAT      | SAT      | TIMEOUT    | 5.813195   | 0.003722     | 150.000000    
+JNH          | jnh214.cnf                          | 100       | 800      | UNSAT    | UNSAT    | TIMEOUT    | 5.315661   | 0.003801     | 150.000000    
+JNH          | jnh215.cnf                          | 100       | 800      | UNSAT    | UNSAT    | TIMEOUT    | 5.947918   | 0.003721     | 150.000000    
+JNH          | jnh216.cnf                          | 100       | 800      | UNSAT    | UNSAT    | TIMEOUT    | 5.444729   | 0.004661     | 150.000000    
+JNH          | jnh217.cnf                          | 100       | 800      | SAT      | SAT      | TIMEOUT    | 5.282274   | 0.010310     | 150.000000    
+JNH          | jnh218.cnf                          | 100       | 800      | SAT      | SAT      | TIMEOUT    | 5.718881   | 0.003827     | 150.000000    
+JNH          | jnh219.cnf                          | 100       | 800      | UNSAT    | UNSAT    | TIMEOUT    | 5.420125   | 0.003696     | 150.000000    
+JNH          | jnh220.cnf                          | 100       | 800      | SAT      | SAT      | TIMEOUT    | 6.070574   | 0.004466     | 150.000000    
+JNH          | jnh3.cnf                            | 100       | 850      | UNSAT    | UNSAT    | TIMEOUT    | 5.832004   | 0.004018     | 150.000000    
+JNH          | jnh301.cnf                          | 100       | 900      | SAT      | SAT      | TIMEOUT    | 6.157994   | 0.004266     | 150.000000    
+JNH          | jnh302.cnf                          | 100       | 900      | UNSAT    | UNSAT    | TIMEOUT    | 6.588826   | 0.004324     | 150.000000    
+JNH          | jnh303.cnf                          | 100       | 900      | UNSAT    | UNSAT    | TIMEOUT    | 6.005132   | 0.004128     | 150.000000    
+JNH          | jnh304.cnf                          | 100       | 900      | UNSAT    | UNSAT    | TIMEOUT    | 6.611837   | 0.004068     | 150.000000    
+JNH          | jnh305.cnf                          | 100       | 900      | UNSAT    | UNSAT    | TIMEOUT    | 6.095381   | 0.003975     | 150.000000    
+JNH          | jnh306.cnf                          | 100       | 900      | UNSAT    | UNSAT    | TIMEOUT    | 5.864591   | 0.005587     | 150.000000    
+JNH          | jnh307.cnf                          | 100       | 900      | UNSAT    | UNSAT    | TIMEOUT    | 5.644442   | 0.004466     | 150.000000    
+JNH          | jnh308.cnf                          | 100       | 900      | UNSAT    | UNSAT    | TIMEOUT    | 5.555447   | 0.004752     | 150.000000    
+JNH          | jnh309.cnf                          | 100       | 900      | UNSAT    | UNSAT    | TIMEOUT    | 5.627311   | 0.004752     | 150.000000    
+JNH          | jnh310.cnf                          | 100       | 900      | UNSAT    | UNSAT    | TIMEOUT    | 5.492604   | 0.004293     | 150.000000    
+JNH          | jnh4.cnf                            | 100       | 850      | UNSAT    | UNSAT    | TIMEOUT    | 5.214009   | 0.004679     | 150.000000    
+JNH          | jnh5.cnf                            | 100       | 850      | UNSAT    | UNSAT    | TIMEOUT    | 5.236268   | 0.004720     | 150.000000    
+JNH          | jnh6.cnf                            | 100       | 850      | UNSAT    | UNSAT    | TIMEOUT    | 5.166518   | 0.005013     | 150.000000    
+JNH          | jnh7.cnf                            | 100       | 850      | SAT      | SAT      | TIMEOUT    | 5.109374   | 0.004404     | 150.000000    
+JNH          | jnh8.cnf                            | 100       | 850      | UNSAT    | UNSAT    | TIMEOUT    | 5.101794   | 0.004671     | 150.000000    
+JNH          | jnh9.cnf                            | 100       | 850      | UNSAT    | UNSAT    | TIMEOUT    | 5.197984   | 0.004706     | 150.000000    
+PARITY       | par16-1-c.cnf                       | 317       | 1264     | SAT      | SAT      | TIMEOUT    | 25.527748  | 0.064545     | 150.000000    
+PARITY       | par16-1.cnf                         | 1015      | 3310     | TIMEOUT  | SAT      | TIMEOUT    | 150.000000 | 0.009432     | 150.000000    
+PARITY       | par16-2-c.cnf                       | 349       | 1392     | SAT      | SAT      | TIMEOUT    | 30.702077  | 0.081971     | 150.000000    
+PARITY       | par16-2.cnf                         | 1015      | 3374     | TIMEOUT  | SAT      | TIMEOUT    | 150.000000 | 0.068156     | 150.000000    
+PARITY       | par16-3-c.cnf                       | 334       | 1332     | SAT      | SAT      | TIMEOUT    | 28.222677  | 0.019960     | 150.000000    
+PARITY       | par16-3.cnf                         | 1015      | 3344     | TIMEOUT  | SAT      | TIMEOUT    | 150.000000 | 0.028987     | 150.000000    
+PARITY       | par16-4-c.cnf                       | 324       | 1292     | SAT      | SAT      | TIMEOUT    | 26.326004  | 0.023755     | 150.000000    
+PARITY       | par16-4.cnf                         | 1015      | 3324     | TIMEOUT  | SAT      | TIMEOUT    | 150.000000 | 0.008731     | 150.000000    
+PARITY       | par16-5-c.cnf                       | 341       | 1360     | SAT      | SAT      | TIMEOUT    | 29.519143  | 0.036389     | 150.000000    
+PARITY       | par16-5.cnf                         | 1015      | 3358     | TIMEOUT  | SAT      | TIMEOUT    | 150.000000 | 0.025970     | 150.000000    
+PARITY       | par32-1-c.cnf                       | 1315      | 5254     | TIMEOUT  | TIMEOUT  | TIMEOUT    | 150.000000 | 150.000000   | 150.000000    
+PARITY       | par32-1.cnf                         | 3176      | 10277    | TIMEOUT  | TIMEOUT  | TIMEOUT    | 150.000000 | 150.000000   | 150.000000    
+PARITY       | par32-2-c.cnf                       | 1303      | 5206     | TIMEOUT  | TIMEOUT  | TIMEOUT    | 150.000000 | 150.000000   | 150.000000    
+PARITY       | par32-2.cnf                         | 3176      | 10253    | TIMEOUT  | TIMEOUT  | TIMEOUT    | 150.000000 | 150.000000   | 150.000000    
+PARITY       | par32-3-c.cnf                       | 1325      | 5294     | TIMEOUT  | TIMEOUT  | TIMEOUT    | 150.000000 | 150.000000   | 150.000000    
+PARITY       | par32-3.cnf                         | 3176      | 10297    | TIMEOUT  | TIMEOUT  | TIMEOUT    | 150.000000 | 150.000000   | 150.000000    
+PARITY       | par32-4-c.cnf                       | 1333      | 5326     | TIMEOUT  | TIMEOUT  | TIMEOUT    | 150.000000 | 150.000000   | 150.000000    
+PARITY       | par32-4.cnf                         | 3176      | 10313    | TIMEOUT  | TIMEOUT  | TIMEOUT    | 150.000000 | 150.000000   | 150.000000    
+PARITY       | par32-5-c.cnf                       | 1339      | 5350     | TIMEOUT  | TIMEOUT  | TIMEOUT    | 150.000000 | 150.000000   | 150.000000    
+PARITY       | par32-5.cnf                         | 3176      | 10325    | TIMEOUT  | TIMEOUT  | TIMEOUT    | 150.000000 | 150.000000   | 150.000000    
+PARITY       | par8-1-c.cnf                        | 64        | 254      | SAT      | SAT      | TIMEOUT    | 0.940055   | 0.002812     | 150.000000    
+PARITY       | par8-1.cnf                          | 350       | 1149     | SAT      | SAT      | TIMEOUT    | 24.786431  | 0.004935     | 150.000000    
+PARITY       | par8-2-c.cnf                        | 68        | 270      | SAT      | SAT      | TIMEOUT    | 1.074019   | 0.002790     | 150.000000    
+PARITY       | par8-2.cnf                          | 350       | 1157     | SAT      | SAT      | TIMEOUT    | 24.882706  | 0.004929     | 150.000000    
+PARITY       | par8-3-c.cnf                        | 75        | 298      | SAT      | SAT      | TIMEOUT    | 1.296070   | 0.002929     | 150.000000    
+PARITY       | par8-3.cnf                          | 350       | 1171     | SAT      | SAT      | TIMEOUT    | 25.667221  | 0.005007     | 150.000000    
+PARITY       | par8-4-c.cnf                        | 67        | 266      | SAT      | SAT      | TIMEOUT    | 1.033261   | 0.002812     | 150.000000    
+PARITY       | par8-4.cnf                          | 350       | 1155     | SAT      | SAT      | TIMEOUT    | 25.627865  | 0.004973     | 150.000000    
+PARITY       | par8-5-c.cnf                        | 75        | 298      | SAT      | SAT      | TIMEOUT    | 1.320484   | 0.002845     | 150.000000    
+PARITY       | par8-5.cnf                          | 350       | 1171     | SAT      | SAT      | TIMEOUT    | 25.950873  | 0.005483     | 150.000000    
+PHOLE        | hole10.cnf                          | 110       | 561      | UNSAT    | UNSAT    | TIMEOUT    | 16.376904  | 99.249094    | 150.000000    
+PHOLE        | hole6.cnf                           | 42        | 133      | UNSAT    | UNSAT    | UNSAT      | 0.325591   | 0.005706     | 21.674982     
+PHOLE        | hole7.cnf                           | 56        | 204      | UNSAT    | UNSAT    | UNSAT      | 0.679518   | 0.046468     | 69.160747     
+PHOLE        | hole8.cnf                           | 72        | 297      | UNSAT    | UNSAT    | TIMEOUT    | 1.319519   | 0.278469     | 150.000000    
+PHOLE        | hole9.cnf                           | 90        | 415      | UNSAT    | UNSAT    | TIMEOUT    | 3.369361   | 6.491848     | 150.000000    
+
+FINAL STATISTICS:
+=================
+
+URSA Results:
+SAT instances:     79
+UNSAT instances:   76
+UNKNOWN instances: 0
+TIMEOUT instances: 19
+ERROR instances:   0
+
+MiniSat Results:
+SAT instances:     85
+UNSAT instances:   75
+TIMEOUT instances: 14
+ERROR instances:   0
+
+Reduction Results:
+SAT instances:     19
+UNSAT instances:   24
+UNKNOWN instances: 0
+TIMEOUT instances: 131
+ERROR instances:   0
+
+Total instances:   174
+Completed: 2025-08-26 04:51:39

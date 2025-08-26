@@ -1,0 +1,90 @@
+bE[0][1] = true;
+bE[1][0] = true;
+bE[1][2] = true;
+bE[2][1] = true;
+
+
+for(ni=0; ni<nV; ni++) {
+  for(nj=0; nj<nV; nj++) {
+    if(ni == nj) {
+      bE[ni][nj] = false;
+    } else {
+      bE[ni][nj] = !bE_original[ni][nj];
+    }
+  }
+}
+
+print(nClauses);
+for(nj=0; nj<nV; nj++){
+	for(ni=0; ni<nV; ni++) {
+		print(bE[nj][ni]);
+	}
+	print(nj);
+}
+
+
+
+gfg prime:
+
+nV = 6; 
+nK = 4; 
+
+bE[0][0] = false;
+bE[0][1] = false;
+bE[0][2] = false;
+bE[0][3] = false;
+bE[0][4] = false;
+bE[0][5] = false;
+
+bE[1][0] = false;
+bE[1][1] = false;
+bE[1][2] = false;
+bE[1][3] = false;
+bE[1][4] = false;
+bE[1][5] = false;
+
+bE[2][0] = false;
+bE[2][1] = false;
+bE[2][2] = false;
+bE[2][3] = false;
+bE[2][4] = false;
+bE[2][5] = false;
+
+bE[3][0] = false;
+bE[3][1] = false;
+bE[3][2] = false;
+bE[3][3] = false;
+bE[3][4] = false;
+bE[3][5] = false;
+
+bE[4][0] = false;
+bE[4][1] = false;
+bE[4][2] = false;
+bE[4][3] = false;
+bE[4][4] = false;
+bE[4][5] = false;
+
+bE[5][0] = false;
+bE[5][1] = false;
+bE[5][2] = false;
+bE[5][3] = false;
+bE[5][4] = false;
+bE[5][5] = false;
+
+bE[0][1] = true;
+bE[0][2] = true;
+bE[0][3] = true;
+bE[1][0] = true;
+bE[1][2] = true;
+bE[1][3] = true;
+bE[1][5] = true;
+bE[2][0] = true;
+bE[2][1] = true;
+bE[2][3] = true;
+bE[3][0] = true;
+bE[3][1] = true;
+bE[3][2] = true;
+bE[3][4] = true;
+bE[4][3] = true;
+bE[5][2] = true;
+

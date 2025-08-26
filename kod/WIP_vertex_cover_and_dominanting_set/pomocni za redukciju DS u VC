@@ -1,0 +1,84 @@
+claudi reduction:
+
+# Dominating Set → Vertex Cover Reduction
+
+## **Osnovnu Strukturu: "Pair"**
+2 čvora povezana granom
+
+## **Konstrukcija:**
+
+**Ulaz:** Graf G = (V,E) i integer k  
+**Izlaz:** Graf G' = (V',E') takav da G ima DS veličine k ⟺ G' ima VC veličine n + k, gde je n = |V|
+
+### **Transformacija:**
+
+1. **Svaki čvor v u V** je predstavljen **parom v1, v2** u V'
+2. **Svaki par je povezan granom** {v1, v2}
+3. **Za svaku granu {u,v} u E**, postoje **4 grane u E':**
+   - {u1,v1}, {u1,v2}, {u2,v1}, {u2,v2}
+
+### **Rezultat:**
+- Graf sa |V| = n i |E| = m → Graf sa |V'| = 2n i |E'| = n + 4m
+
+## **Claim:** 
+G ima DS veličine k ⟺ G' ima VC veličine n + k
+
+## **Dokaz:**
+
+### **Osnovna observacija:**
+Za bilo koji VC u G', **bar jedan čvor iz svakog "para" mora biti uključen**, jer imaju granu između sebe.
+
+### **Smer 1: DS → VC**
+**Ako G ima DS veličine k:**
+
+1. Izaberi **oba čvora** iz onih k parova (koji odgovaraju DS)
+2. Izaberi **bilo koji jedan čvor** iz svakog od ostalih n-k parova
+3. **Ukupno:** n + k čvorova u G'
+
+**Zašto je ovo VC?**
+- Sve grane između parova su pokrivene (izabrali smo bar jedan čvor iz svakog para)
+- Razmotriti bilo koju drugu granu u E'. Po konstrukciji G', ova grana mora odgovarati grani u E
+- Ako grana {u,v} postoji u G, onda u DS bar jedan od {u,v} dominira drugi
+- U G' smo izabrali oba čvora iz para koji odgovara DS čvoru, tako da su sve 4 grane pokrivene
+
+### **Smer 2: VC → DS**
+**Ako G' ima VC veličine n + k:**
+
+1. Pošto svaki par mora imati bar jedan čvor u VC, a VC ima n + k čvorova
+2. Tačno k parova mora imati **oba čvora** u VC
+3. Ostalih n-k parova ima **tačno jedan čvor** u VC
+4. **Ovi k parova** (sa oba čvora) odgovaraju DS u G
+
+**Zašto je ovo DS?**
+- Za svaku granu {u,v} u E, postoji 4 grane u E' između parova u1,u2 i v1,v2
+- Da bi sve bile pokrivene, bar jedan od parova mora imati oba čvora u VC
+- To znači da odgovarajući čvor u G dominira susede u originalnom grafu
+
+## **Primer:**
+
+**Graf G:**
+```
+A ---- B ---- C
+```
+DS = {B}, k = 1, n = 3
+
+**Graf G':**
+```
+A1 ---- A2    B1 ---- B2    C1 ---- C2
+ |       |     |       |     |       |
+ +-------+-----+-------+-----+-------+
+         |             |
+         +-------------+
+```
+
+**VC u G':** {A1, B1, B2, C2} (veličina 4 = 3 + 1)
+- Par {B1,B2}: oba čvora (odgovara DS)
+- Par {A1,A2}: jedan čvor
+- Par {C1,C2}: jedan čvor
+
+## **Kompleksnost:**
+- **Vreme:** O(n + m) - linearna konstrukcija
+- **Prostor:** O(n + m) - dodaju se parovi čvorova i grane
+
+## **Zaključak:**
+Ova redukcija dokazuje da je **Dominating Set ≤p Vertex Cover**, što pomaže u ustanovljavanju NP-completeness-a Dominating Set problema.

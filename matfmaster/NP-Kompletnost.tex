@@ -1,0 +1,440 @@
+\documentclass[12pt,oneside]{memoir}
+
+% Paket koji definiše sve specifičnosti mastera Matematičkog fakulteta
+\usepackage{matfmaster}
+
+% Paket koji obezbeđuje ispravni prikaz ćiriličkih italik slova kada
+% se koristi pdflatex. Zakomentarisati ako na sistemu koji koristite ovaj
+% paket nije dostupan ili ako ne radi ispravno.
+%\usepackage{cmsrb}
+
+% Ostali paketi koji se koriste u dokumentu
+\usepackage{listings} % listing programskog koda
+
+% Datoteka sa literaturom u BibTex tj. BibLaTeX/Biber formatu
+\bib{matfmaster-primer}
+
+% Ime kandidata na srpskom jeziku (u odabranom pismu)
+\autor{Лука Марковић}
+% Naslov teze na srpskom jeziku (u odabranom pismu)
+\naslov{Међусобно свођење НП-комплетних проблема у систему URSA}
+% Godina u kojoj je teza predana komisiji
+\godina{2025}
+% Ime i afilijacija mentora (u odabranom pismu)
+\mentor{др Предраг \textsc{Јаничић}, редован професор\\ Универзитет у Београду, Математички факултет}
+% Ime i afilijacija prvog člana komisije (u odabranom pismu)
+\komisijaA{др Филип \textsc{Марић}, редован професор\\ Универзитет у Београду, Математички факултет}
+% Ime i afilijacija drugog člana komisije (u odabranom pismu)
+\komisijaB{др Весна \textsc{Маринковић}, редован професор\\ Универзитет у Београду, Математички факултет}
+% Ime i afilijacija trećeg člana komisije (opciono)
+% \komisijaC{}
+% Ime i afilijacija četvrtog člana komisije (opciono)
+% \komisijaD{}
+% Datum odbrane (obrisati ili iskomentarisati narednu liniju ako datum odbrane nije poznat)
+\datumodbrane{15. јануар 2016.}
+
+% Apstrakt na srpskom jeziku (u odabranom pismu)
+\apstr{%
+Klasa np problema je jedna veliki skup problema u programiranju. Mnoge stvari se izucavaju na np kompletnim problemima, pa je tako tema ovog master rada nastala. 
+Prvobitna ideja je rada je da se automatizuje proces svodjenja jednog problema na drugi, ali kako je to zahtevalo mnogo posla. 
+
+Rad se svodi na transforamciju nekih problema na SAT problem u jeziku URSA
+
+prvo poglavlje govori sta je jezik ursa, postavlja teoriju np koplenosti. Drugo poglavlje se koncentirse na implementaciju samih algoritama prevodjenja.
+U zakljucku je obradjeno do cega smo dosli kao i moguca dalja istrazivanja
+}
+
+% Ključne reči na srpskom jeziku (u odabranom pismu)
+\kljucnereci{НП-Комплетност, Теорија израчунљивости, језик УРСА, , Недетерминизам, Сертификати}
+
+\begin{document}
+% ==============================================================================
+% Uvodni deo teze
+\frontmatter
+% ==============================================================================
+% Naslovna strana
+\naslovna
+% Strana sa podacima o mentoru i članovima komisije
+\komisija
+% Strana sa posvetom (u odabranom pismu)
+\posveta{Мами, тати и деди}
+% Strana sa podacima o disertaciji na srpskom jeziku
+\apstrakt
+% Sadržaj teze
+\tableofcontents*
+
+% ==============================================================================
+% Glavni deo teze
+\mainmatter
+% ==============================================================================
+
+% ------------------------------------------------------------------------------
+\chapter{Увод}
+% ------------------------------------------------------------------------------
+ovo je drugi panagram
+
+\section{Примери коришћења класичних \LaTeX{} елемената}
+% primeri citiranja
+Ово је реченица у којој се јавља цитат \cite{PetrovicMikic2015}.
+Још један цитат \cite{GuSh:243}.
+% primeri navodnika
+Испробавамо наводнике: "Рекао је да му се јавимо сутра".
+% primer referisanja na tabelu (koja se javlja kasnije)
+У табели \ref{tbl:rezultati} која следи приказани су резултати експеримента.
+% primer kraćeg latiničkog teksta
+{\lat Ovo je primer rečenice ispisane latiničkim pismom u okviru ćiriličkog dokumenta.}
+У овој реченици се налази једна {\lat reč} написана латиницом.
+% primer korišćenja fusnota
+Иза ове реченице следи фуснота.\footnote{Ово је фуснота.}
+% primer url-a
+Сајт математичког факултета је \url{http://www.matf.bg.ac.rs}.
+
+% primer dužeg latiničkog teksta
+\begin{latinica}
+  Ovo je malo duži blok teksta ispisan latiničkim pismom u okviru
+  ćiriličkog dokumenta. Fijuče vetar u šiblju, ledi pasaže i kuće iza
+  njih i gunđa u odžacima.
+\end{latinica}
+
+% primer korišćenja tabele
+\begin{table}
+\centering
+\caption{Резултати}
+\label{tbl:rezultati}
+\begin{tabular}{c>{\centering}p{2cm}c}
+\toprule
+1 & 2 & 3\\\midrule
+4 & 5 & 6\\\cmidrule(rl){1-2}
+7 & 8 & 8\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% primer korišćenja slike
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=0.5\textwidth]{graph.png}
+  \caption{Графикон}
+  \label{fig:grafikon}
+\end{figure}
+
+% primer jednostavnije matematičke formule
+Ево и један пример математичке формуле: $e^{i\pi} + 1 = 0$. 
+% primer referisanja na sliku
+На слици \ref{fig:grafikon} приказан је један графикон.
+
+% primer kompleksnije matematičke formule
+$$
+\int_a^b f(x)\ \mathrm{d}x \ =_{def}\ \lim_{\max{\Delta x_k \rightarrow 0}} \sum_{k=1}^n f(x_k^*)\Delta x_k
+$$
+
+% primer referisanja na poglavlja i strane poglavlja
+Више детаља биће дато у глави \ref{chp:razrada} на страни \pageref{chp:razrada}.
+
+% primer listinga koda
+
+У тезу можемо убацити и програмски кôд.
+
+\begin{verbatim}
+Ovo je doslovni tekst.
+\end{verbatim}
+
+%\begin{english}
+%\lstset{
+%  language=C,
+%  basicstyle=\ttfamily,
+%  keywordstyle=\color{blue}
+%}
+%\begin{lstlisting}
+%#include <stdio.h>
+%
+%int main() {
+%   printf("Hello, world!\n");
+%   return 0;
+%}
+%\end{lstlisting}
+%\end{english}
+
+
+Овај C програм се може превести помоћу преводиоца GCC \cite{gcc}.
+
+% primer liste
+Можемо правити и набрајања:
+\begin{enumerate}
+\item Анализа 1
+\item Линеарна алгебра
+\item Аналитичка геометрија
+\item Основи програмирања
+\end{enumerate}
+
+Treci panagram
+
+% ------------------------------------------------------------------------------
+\chapter{Разрада}
+
+\section{НП-Комплетност}
+% ------------------------------------------------------------------------------
+
+Постоје проблеми за које не потоји елегантно решење. Можда није уложено довољно напора да се оно нађе, али се са доста сигурности може претпоставит
+да постоје проблеми који немају ефиксно решење. 
+
+За алгоритме који се могу решити у полиномијалном времену (O(P(n)) кажемо да су ефикасни. Класу свих проблема који се могу решити ефикасним алгоритмом
+означавамо са П (полиномијално време). 
+Једна поткласа проблема који нису П су НП-комплетни проблеми. Ти проблеми припадају истој класи јер су међусобно строго еквивалентини => ефикасан 
+алгоритам за неки НП-комплетан проблем постоји акко за сваки НП-Комплетан проблем постоји ефикасан алгоритам.  За сада, такав алгоритам није пронађен, и
+верује се да не постоји. Овакивих проблема има на стотине, можда и хилјаде, због чега је ова област занимљива.
+
+Битан концепт за НП-Комплетност је редукција - свођење једног проблема на други. Да би се лакше дефинисали, уводимо ограничење посматрања проблема одлучивања. Ако умемо да решимо проблем одлучивања, обично можемо да решимо и полазни проблем.
+
+Дефиниција: Нека су L1 и L2 два језика, подскупова редом скупова улаза U1 и U2. Кажемо да је Л1 полиномијално сводљив на Л2, ако постоји алгоритам полиномијалне врерменске сложености, који дати улаз у1 (припада) У1 преводи у улаз у2 (припада) У2, тако да у1 (припада)Л1 акко у2 (припада)Л2.
+
+Ако знамо алгоритам за препознавање Л2, онда га можемо суперпонирати са алгоритмом редукције и тако добити алгоритам за решавање Л1. Алгоритам редукције
+АР, алгоритам препознавања Л2 је АЛ2. Препознавање улаза у1 (припада)У1 може се применом АР трансформисати у улаз у2 (припада) У2, и применом АЛ2 установити да ли у2 (прпада) Л2, а тиме и да ли у1 (припада)Л1. 
+
+Теорема: Ако је језик Л1 полиномијално сводљив на језик Л2, и постоји алгоритам полиномијалне временске сложености за препознавање Л2, онда постоји алгоритам полиномијалне временске сложености за препознавање Л1
+
+Доказ: Релација полиномијалне сводљивости није полиномијална сводљивост Л1 на Л2 не повлачи полиномијалну сводљивост Л2 на Л1. Ово произилази из чињенице
+да дефиниција сводљивости захтева да се произвољан улаз за Л1 може трнсформисати на Л2, али не и обрнуто. Могуће је да улаз за Л2, добијен на овај начин, представља само мали део свих могућих улаза. Ако је Л1 полиномијално сводљив на Л2, сматрамо да је Л2 \textbf{тежи}
+
+Два јеѕика Л1 и Л2 су полиномијално еквивалентна ако је сваки од њих полиномијално сводљив на други.
+Релација полиномијалне сводљивости је транзитивна.
+
+Теорија НП-Комплетности је део шире области која се зове сложеност израчунавања.
+
+Формална дефиниција класе језика П:
+П = {Л | постоји полиномијални програм М за ДТМ, за који је Лм = Л }
+
+Један од најпознатијих НП-Комплетних проблема је проблем трговачког путника. "НАВЕСТИ ПРОБЛЕМ" - МОЖЕ ДА БУДЕ ЈЕДАН ЗА СВОЂЕЊЕ КАСНИЈЕ.
+За овај проблем нема познатог алгоритма полиномијалне сложености, али ако имамо неки улаз (низ чворова), лако можемо да проверимо да ли је то Хамилтонов циклус и да израчунамо његову дужину => временска сложеност полиномоијална = полиномијална проверљивост.
+
+Провера за полиномијално време није исто што и решаванје за поликомијслно време. 
+
+НП се неформално дефинише помоћу недетерминистичког алгоритма. Тај алг се састоји од фазе погађанја и фазе провере.
+
+Ѕа дати улаз у у првој фази се изводи просто погађање структуре С. Затим се у и С заједно предају као улаз за фазу провере, која се изводи на детерминистички начин, па се зевршава одговором да, не или се извршава бесконачно дуго.
+Недетерминистички алгоритам "решава" проблем одлучивања П, ако су за произвољни улаз у (припада) Уп за овај проблем испуњена два услова:
+- Ако у (припада) Лп онда постоји таква структура С, чије би погађање за улаз у довело до тога да се фаза провере са улазом (у, С) заврши одговором "да".
+- Ако у (не припада) Лп, онда не постоји таква структура С, чије би погађање за улаз у обезбедило завршавање фазе провере са улазом (у, С) одговорм "да".
+
+Каже се да недетерминистички алгоритам који решава проблем одлучивања П ради за "полиномијално време", ако постоји полином п такав да за сваки улаз у (припада) Уп постоји такво погађање С, да се фаза провере са улазом (у, С) завршава са одговором "да" за време п(|у|).
+
+Класа НП, дефинисана неформално, то је класа свих проблема одлучивања који при разумном кодирању могу бити решени недетирмистичким (Н) алгоритмом за полиномијално(П) време. Формално:
+НП )= { Л | постоји НДТМ програм М са полиномијалним временом извршавања, за који је Лм = Л}
+Постоје проблеми који се не могу решити ефикасно ни помоћу недетерминистичког алгоритма. Класа проблема за које постоји недетерминистички алгоритам полиномијалне временске сложености зове се НП.
+
+Проблем односа П и НП је познат као проблем П=НП. 
+\textbf{Дефиниција} Проблем Х је НП-тежак проблем ако је сваки проблем из класе НП полиномијално сводљив на Х.
+\textbf{Дефиниција} Проблем Х је НП-комплетан проблем ако припада класи НП и ако је НП-тежак.
+
+Проблем Х је НП-комплетан ако (1) Х припада класи НП, и (2) постоји НП-комплетан проблем Y који је полиномијално сводљив на Х
+
+\subsection{Проблем задовољивости (САТ) }
+Посебно ћемо описати прблем задовољивости израза јер је он први који за који је доказано да је НП-Комплетан. Кукова теорема. (ставити цитат ка теореми, линк...)
+
+Нека је С Булов израз у конјуктивној нормалној форм (КНФ). С је конјукција више клауза - дисјункција група литерала, симбола променљивих или њихових негација.
+С = (x+y+|z)(|x+y+z)(|x+|y+|z) где је сабирање дисјункција(или), а множење конјукција (и), а свака променљива има вредност 0 или 1.  Свака булова функција се може представити изразом у КНФ. Булов израз је задовољив, ако постоји такво додељивање нула и јединица променљивим, да израз има вредност 1. Проблем САТ се састоји у утврђивању да ли је задати израз задовољив - није неопходно пронаћи одговарајуће вредности.
+
+Проблем САТ је у класи НП јер се за (недетерминистички) изабране вредности променљивих за полиномијално време (од величине улаза - укупне дужине формуле) може проверити да ли је израз тачан. Проблем САТ је НП-тежак јер се извршавање програма НДТМ за алгоритам који решава произвољан изабрани проблем из класе НП може описати Буловим изразом.
+
+\section{URSA језик за свођење проблема на САТ}
+
+
+## Опште карактеристике УРСА система
+
+УРСА (Uniform Reduction to SAT) представља специјализовани програмски језик и систем који омогућава јединствено свођење различитих комбинаторних проблема на САТ (Boolean satisfiability problem). Систем је развио проф. Предраг Јаничић са Математичког факултета у Београду као део истраживања у области аутоматског резоновања и решавања ограничења.
+
+Основна идеја УРСА система лежи у комбиновању императивног програмирања, сличног програмском језику Ц, са декларативним приступом решавања ограничења. Овакав хибридни приступ омогућава програмерима да користе познату императивну синтаксу за описивање проблема, док систем у позадини аутоматски генерише одговарајуће САТ формуле и позива напредне САТ солвере за проналажење решења.
+
+\subsection{Спецификација језика и архитектура система}
+
+УРСА језик подржава два основна типа података: нумеричке променљиве означене префиксом `n` и Boolean променљиве означене префиксом `b`. Систем омогућава рад са низовима у једној и две димензије, што је посебно корисно за моделовање структура попут графова или матрица. Језик укључује стандардне Ц операторе за аритметичке операције (`+`, `-`, `*`), битовске операције (`&`, `|`, `^`, `<<`, `>>`), као и уобичајене контролне структуре (`if`, `while`, `for`).
+
+Кључне команде система укључују `assert()` за дефинисање ограничења која решење мора да задовољи, као и `minimize()` и `maximize()` за спецификовање оптимизационих циљева. Програмер пише код који описује како да се провери да ли је одређено решење валидно, а УРСА систем аутоматски трансформише овакву спецификацију у одговарајућу САТ формулу кроз процес симболичке егзекуције.
+
+\subsection{Разлози избора УРСА система}
+
+Избор УРСА система за имплементацију свођења НП проблема мотивисан је неколико кључних фактора. Универзалност система омогућава коришћење једног језика за моделовање различитих типова НП проблема, што значајно поједностављује процес имплементације. Природност императивне синтаксе чини систем приступачним програмерима који су већ упознати са језицима попут Ц-а, елиминишући потребу за учењем потпуно нових декларативних парадигми.
+
+Аутоматизација процеса генерисања САТ формула представља значајну предност, јер ослобађа програмера од потребе за ручним креирањем сложених логичких формула. Ефикасност система произилази из коришћења напредних САТ солвера који представљају тренутни врх технологије у области аутоматског резоновања. Посебно значајне су битовске операције које су уграђене у језик и које су погодне за прецизно моделовање комбинаторних проблема.
+
+\subsection{Предности у формалном изражавању проблема}
+
+УРСА систем пружа значајне предности у формалном изражавању и моделовању проблема. Једноставност моделовања омогућава да се проблеми описују као тестови валидности решења, што директно одговара математичким дефиницијама проблема. Флексибилност система дозвољава коришћење истог језика за проблеме из различитих домена, од теорије графова до криптоанализе.
+
+Прецизност формалног описа постиже се јасним разликовањем између спецификације проблема и процеса решавања. Програмер се фокусира на дефинисање услова које решење мора да задовољи, док се техничке имплементационе детаље препуштају систему. Верификабилност кода омогућава да се написана спецификација директно пореди са математичком дефиницијом проблема, што олакшава проверу исправности имплементације.
+
+\subsection{Практичне предности система}
+
+Са практичне стране, УРСА омогућава компактно представљање сложених проблема кроз релативно кратке кодове који јасно описују логику проблема. Аутоматска оптимизација кроз напредне САТ солвере обезбеђује ефикасно решавање без потребе за ручним подешавањем алгоритма. Могућност спецификовања оптимизационих циљева кроз `minimize` и `maximize` команде проширује примену система ван стандардних decision проблема.
+
+Једноставност модификације кода за различите варијанте истог проблема омогућава брзо експериментисање и итеративно побољшавање модела. Ова карактеристика је посебно важна у контексту истраживања свођења проблема, где је потребно имплементирати и тестирати различите варијанте трансформација између проблема.
+
+Свођење алгоритама ћемо радити у језику урса. То је језик који је настао на Математичком факултету за сврху свођења проблема на проблем САТ(можда је и САТ солвер, прочитати изучити). (Линк ка раду и сајту)
+
+\section{Свођење НП-комплетних проблема}
+
+Да би се показало да је неки проблем НП-Комплетан, морамо да покажемо да припада и класи НП и класи НП-тешких проблема. 
+
+Проблем припада НП-класи ако може да се у  полиномијалном времену провери тачност, односно за дати сертификат, можемо у полиномијалном времену проверимо да ли је то решење проблема.
+
+Да бисмо доказали да неки проблем припада класи НП-тешких проблема, потребно је да неки познати НП-тежак проблем сведемо на овај проблем у полиномијалном времену.
+
+\subsection{Узајамно свођење проблема САТ и Клике}
+Проблем клике:
+клика је подграф графа такав да сви чворови тог подграфа су међусобно повезани, што значи да је тај подграф заправо комплетан граф. Проблем проналаска максималне клике је проблем налажења таквог подграфа са највећим могућим бројем чворова. Наш проблем одлучивања ће бити проналазак клике величине К.
+
+Да би се показало да клика припада класи НП проблема задајемо сертификат: скуп од С чворова који се састоје у клики и С је подграф графа Г.
+Да би смо проверили да ли је С величине К треба нам време О(1). Затим треба још да проверимо да ли су сви чворови међусобно повезани за шта нам треба јос О(к*к) времена. Тако да провера да ли к чворова из С су комплетни захтева време од О(н*н) где је н број чворова графа.
+
+Да бисмо показали да је клика НП-тежак проблем, свешћемо проблем САТ на њу. То радимо тако што кренемо од неке инстанце сат проблема, и кажемо да ако је САТ формула задовољива, онда ће и у добијеном графу постојати клика бар величине броју клаузула
+
+ZONA 2: Svođenje SAT → CLIQUE
+Korak 1: Kreiranje čvorova grafa
+Purpose: Transform each literal in each clause into a vertex in the graph
+Logic: Every literal occurrence becomes a unique node labeled with <literal, clause_number>
+Vertices: For each clause i and each literal l in clause i: create vertex <l, i>
+Count: Total number of literal occurrences across all clauses
+Korak 2: Inicijalno potpuno povezan graf
+Purpose: Start with a complete graph where every vertex is connected to every other vertex
+Logic: Begin with maximum connectivity, then selectively remove edges based on constraints
+Edges: Connect every pair of vertices (except self-loops)
+Count: C(total_vertices, 2) edges initially
+Korak 3: Uklanjanje grana između konfliktnih literala
+Purpose: Ensure that a variable and its negation cannot both be true simultaneously
+Logic: If vertex <x, i> and vertex <¬x, j> exist (same variable, different clauses), they cannot both be in the clique
+Edges removed: Between <x, i> and <¬x, j> for all variables x and clause pairs (i,j) where i ≠ j
+Count: Number of variable-negation pairs across different clauses
+Korak 4: Uklanjanje grana unutar iste klazule
+Purpose: Ensure that at most one literal per clause can be selected (since we need exactly one true literal per clause)
+Logic: Vertices representing literals from the same clause cannot both be in the clique
+Edges removed: Between any two vertices <l₁, i> and <l₂, i> from the same clause i
+Count: Sum over all clauses i of C(literals_in_clause_i, 2)
+
+Summary
+
+Goal: Find a k-clique where k = number of clauses
+Meaning: Each vertex in the clique represents one satisfied literal per clause
+Result: Graph has a k-clique iff original SAT formula is satisfiable
+Bijection: Each satisfying assignment ↔ exactly one k-clique
+
+ZONA 3: CLIQUE problem (rešenje problema Y)
+
+
+
+
+За други смер свођења имамо 4 ограничења:
+-свака позиција у клики мора бити попуњена
+-Један чвор не може бити на више од једне позиције у клики
+-свака позиција мора бити попуњена различитим чворовима
+-Чворови морају бити међусобно повезани
+
+овим поступком добијамо доста клаутула и више решења због пермутација. Тачан број је дат формулом:
+број клика у графу * faktorijal величина клике 
+
+
+
+STEP 1: Each position in the clique must be filled
+
+Purpose: Ensure that every position in the k-clique has exactly one vertex assigned
+Logic: For each position j ∈ [0, k-1], at least one vertex must be selected
+Clauses: For each position j: (x_{j,0} ∨ x_{j,1} ∨ ... ∨ x_{j,n-1})
+Count: k clauses (one per position)
+
+STEP 2: Each vertex can be in at most one position
+
+Purpose: Prevent the same vertex from being assigned to multiple positions
+Logic: If vertex i is at position j, it cannot be at any other position
+Clauses: For each vertex i and positions j ≠ k: (¬x_{j,i} ∨ ¬x_{k,i})
+Count: n × C(k,2) clauses = n × k×(k-1)/2 clauses
+
+STEP 3: Each position can have at most one vertex
+
+Purpose: Prevent multiple vertices from being assigned to the same position
+Logic: If position j has vertex i, it cannot have any other vertex
+Clauses: For each position j and vertices i ≠ k: (¬x_{j,i} ∨ ¬x_{j,k})
+Count: k × C(n,2) clauses = k × n×(n-1)/2 clauses
+
+STEP 4: Vertices in the clique must be connected
+
+Purpose: Ensure that selected vertices form a complete subgraph (clique)
+Logic: If vertices i and k are not connected in the original graph, they cannot both be in the clique
+Clauses: For each pair of positions (j,l) and each pair of disconnected vertices (i,k): (¬x_{j,i} ∨ ¬x_{l,k})
+Count: C(k,2) × (number of disconnected vertex pairs) clauses
+
+Summary
+
+Variables: x_{i,j} where i ∈ [0,k-1] (position) and j ∈ [0,n-1] (vertex)
+Meaning: x_{i,j} = true iff vertex j is at position i in the clique
+Total variables: k × n
+Result: SAT formula is satisfiable iff original graph has a k-clique
+
+STEP 5: Lexicographic ordering - elimination of permutations
+
+Purpose: Eliminate permutations by enforcing a canonical ordering of vertices in the clique
+Logic: For all positions i < j, the vertex at position i must have a smaller index than the vertex at position j
+Clauses: For each pair of positions (i,j) where i < j, and each pair of vertices (v₁,v₂) where v₁ ≥ v₂: (¬x_{i,v₁} ∨ ¬x_{j,v₂})
+Count: C(k,2) × n×(n+1)/2 clauses
+Result: Each clique has exactly one canonical representation, reducing solutions from 3×6=18 to 3
+
+
+\subsection{Свођење проблема Клике на проблем Покривача грана}
+
+
+Hamiltonov ciklus <=> TSP: Problem Hamiltonovog ciklusa se može svesti na TSP tako što se težine grana postave na 1 za postojeće veze i na veliku vrednost za nepostojeće veze. Ako postoji TSP rešenje sa težinom jednakom broju čvorova, postoji i Hamiltonov ciklus.
+
+TSP <=> Problem raspoređivanja: TSP se može svesti na problem raspoređivanja definisanjem zadataka kao poseta čvorovima i resursa kao puteva između čvorova, gde težine grana predstavljaju troškove ili vremena putovanja.
+
+Problem raspoređivanja <=> SAT: Problem raspoređivanja se može svesti na SAT tako što se za svaki zadatak definišu promenljive koje predstavljaju raspored resursa i vremenskih okvira, a ograničenja se predstavljaju kao klauze.
+
+Klika <=> Maximum Independent Set <=> SAT: Maksimalni nezavisni skup se može svesti na SAT tako što se svaka podskupina čvorova predstavlja promenljivama, a ograničenja međusobne nepovezanosti se predstavljaju kao klauze.
+
+\subsection{Узајамно свођење проблема Покривача грана и Dominantnog skupa}
+
+Dominantni skup:
+brojimo koliko cvorova pripada dominirajucem skupu (trazimo sva resenja za manje ili jednako k cvorova)
+prolazimo kroz sve cvorove - ako cvor i pripada, povecavamo broj dominantnih
+proveravamo da li je neki susedni cvor cvoru i dominantan:
+	prolazimo kroz sve cvorove, ako cvor pripada i ako ima granu ka cvoru i, tada bDominant moze da postane true inace ostaje false.
+	
+na kraju azuriramo b tako sto, ako cvor i pripada, super smo, ako on ne pripada, onda mora da ima sused koji je dominantan i ok smo. ako ne pripada i nema dominantan sused znaci da ta kombinacija nema 
+dominantan skup covrova.
+
+
+% ------------------------------------------------------------------------------
+\chapter{Закључак}
+% ------------------------------------------------------------------------------
+sesti panagram
+
+sedmi panagram
+
+% ------------------------------------------------------------------------------
+% Literatura
+% ------------------------------------------------------------------------------
+\literatura
+
+% ==============================================================================
+% Završni deo teze i prilozi
+\backmatter
+% ==============================================================================
+
+% ------------------------------------------------------------------------------
+% Biografija kandidata
+\begin{biografija}
+\textbf{Вук Стефановић Караџић} (\emph{Тршић, 26. октобар/6. новембар
+  1787. — Беч, 7. фебруар 1864.}) био је српски филолог, реформатор
+српског језика, сакупљач народних умотворина и писац првог речника
+српског језика.  Вук је најзначајнија личност српске књижевности прве
+половине XIX века. Стекао је и неколико почасних доктората.
+Учествовао је у Првом српском устанку као писар и чиновник у
+Неготинској крајини, а након слома устанка преселио се у Беч,
+1813. године. Ту је упознао Јернеја Копитара, цензора словенских
+књига, на чији је подстицај кренуо у прикупљање српских народних
+песама, реформу ћирилице и борбу за увођење народног језика у српску
+књижевност. Вуковим реформама у српски језик је уведен фонетски
+правопис, а српски језик је потиснуо славеносрпски језик који је у то
+време био језик образованих људи. Тако се као најважније године Вукове
+реформе истичу 1818., 1836., 1839., 1847. и 1852.
+\end{biografija}
+% ------------------------------------------------------------------------------
+
+\end{document} 

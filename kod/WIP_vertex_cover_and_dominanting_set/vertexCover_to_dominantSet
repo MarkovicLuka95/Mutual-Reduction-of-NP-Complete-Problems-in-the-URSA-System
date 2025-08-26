@@ -1,0 +1,87 @@
+/*Exemple from https://www.geeksforgeeks.org/dsa/proof-that-dominant-set-of-a-graph-is-np-complete/*/
+nV = 5; 
+nK = 2; 
+
+/*Initialization of an empty graph*/
+for(ni=0; ni<nV; ni++) {
+  for(nj=0; nj<nV; nj++) {
+    bE_vertex[ni][nj] = false;
+  }
+}
+
+bE_vertex[0][1] = true; bE_vertex[1][0] = true;
+bE_vertex[0][4] = true; bE_vertex[4][0] = true;
+bE_vertex[1][2] = true; bE_vertex[2][1] = true;
+bE_vertex[1][4] = true; bE_vertex[4][1] = true;
+bE_vertex[2][3] = true; bE_vertex[3][2] = true;
+bE_vertex[3][4] = true; bE_vertex[4][3] = true;
+
+/* Brojimo grane */
+nEdges = 0;
+for(ni=0; ni<nV; ni++) {
+  for(nj=ni+1; nj<nV; nj++) {
+    nEdges += ite(bE_vertex[ni][nj], 1, 0);
+  }
+}
+
+
+/* Graf G' = originalni čvorovi + pomoćni čvorovi za svaku granu */
+nV_new = nV + nEdges;  /* 4 + 5 = 9 čvorova */
+
+/* Mapiranje grana na pomoćne čvorove- fakticki dodajemo brojeve novim cvorovima da bismo mogli da im pristupimo*/
+nEdgeToNode = 0;
+for(ni=0; ni<nV; ni++) {
+  for(nj=ni+1; nj<nV; nj++) {
+    nEdgeNodes[ni][nj] = ite(bE_vertex[ni][nj], nV + nEdgeToNode, -1);
+    nEdgeToNode += ite(bE_vertex[ni][nj], 1, 0);
+  }
+}
+
+/* Konstruisanje novog grafa G' */
+for(ni=0; ni<nV_new; ni++) {
+  for(nj=0; nj<nV_new; nj++) {
+    bE[ni][nj] = false;
+  }
+}
+
+/* Korak 1: Kopiramo originalne grane */
+for(ni=0; ni<nV; ni++) {
+  for(nj=0; nj<nV; nj++) {
+    bE[ni][nj] = bE_vertex[ni][nj];
+  }
+}
+
+/* Korak 2: Za svaku granu {u,v} u originalnom grafu, */
+/* dodajemo pomoćni čvor i povezujemo ga SAMO sa u i v */
+for(ni=0; ni<nV; ni++) {
+  for(nj=ni+1; nj<nV; nj++) {
+    nHelperNode = nEdgeNodes[ni][nj];
+    if(nHelperNode != -1) {
+      /* Povezujemo pomoćni čvor sa krajevima originalne grane */
+      bE[ni][nHelperNode] = true;
+      bE[nHelperNode][ni] = true;
+      bE[nj][nHelperNode] = true;
+      bE[nHelperNode][nj] = true;
+    }
+  }
+}
+
+/* Parametar za novi problem */
+nK_dominating = nK;  
+
+/* DOMINATING SET problem */
+nCount = 0;
+b = true;
+
+for(ni=0; ni<nV_new; ni++) {
+  nCount += ite(bBelongs[ni], 1, 0);
+  
+  bDominated = false;
+  for(nj=0; nj<nV_new; nj++) {
+    bDominated ||= ite(bBelongs[nj] && (bE[ni][nj] || bE[nj][ni]), true, false);
+  }
+  
+  b &&= ite(bBelongs[ni], true, bDominated);
+}
+
+assert_all(b && nCount <= nK_dominating);

@@ -1,0 +1,54 @@
+/*Exemple from https://www.geeksforgeeks.org/dsa/proof-that-dominant-set-of-a-graph-is-np-complete/*/
+nV = 11; 
+nK = 3; 
+
+/*Initialization of an empty graph*/
+for(ni=0; ni<nV; ni++) {
+  for(nj=0; nj<nV; nj++) {
+    bE[ni][nj] = false;
+  }
+}
+
+/* problem iz knjige */
+bE[0][1] = true; bE[1][0] = true;
+bE[1][2] = true; bE[2][1] = true;  
+bE[0][4] = true; bE[4][0] = true;
+bE[4][3] = true; bE[3][4] = true;
+
+bE[0][5] = true; bE[5][0] = true;
+bE[1][5] = true; bE[5][1] = true;
+
+bE[1][6] = true; bE[6][1] = true;
+bE[2][6] = true; bE[6][2] = true;
+
+bE[2][7] = true; bE[7][2] = true;
+bE[3][7] = true; bE[7][3] = true;
+
+bE[4][8] = true; bE[8][4] = true;
+bE[3][8] = true; bE[8][3] = true;
+
+bE[1][9] = true; bE[9][1] = true;
+bE[4][9] = true; bE[9][4] = true;
+
+bE[0][10] = true; bE[10][0] = true;
+bE[4][10] = true; bE[10][4] = true;
+
+
+/*specifikacija resenja za dominirajuci skup */
+nCount = 0;
+b = true;
+for(ni=0; ni<nV; ni++) {
+  nCount += ite(bBelongs[ni], 1, 0); 
+  
+  bDominated = false;
+  for(nj=0; nj<nV; nj++) {
+    bDominated ||= ite(bBelongs[nj] && (bE[ni][nj] || bE[nj][ni]), true, false);
+  }
+
+  b &&= ite(bBelongs[ni], true, bDominated);
+}
+
+assert_all(b && nCount <= nK);
+
+%---------------------------------------------------
+

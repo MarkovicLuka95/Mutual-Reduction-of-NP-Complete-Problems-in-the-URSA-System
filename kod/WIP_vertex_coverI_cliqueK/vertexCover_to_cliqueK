@@ -1,0 +1,48 @@
+nV = 6; 
+nK_vertex_cover = 2; 
+
+/*Initialization of an empty graph*/
+for(ni=0; ni<nV; ni++) {
+  for(nj=0; nj<nV; nj++) {
+    bE[ni][nj] = false;
+  }
+}
+
+bE_vertex[0][4] = true;
+bE_vertex[0][5] = true;
+bE_vertex[1][4] = true;
+bE_vertex[2][4] = true;
+bE_vertex[2][5] = true;
+bE_vertex[3][5] = true;
+bE_vertex[4][0] = true;
+bE_vertex[4][1] = true;
+bE_vertex[4][2] = true;
+bE_vertex[4][5] = true;
+bE_vertex[5][0] = true;
+bE_vertex[5][1] = true;
+bE_vertex[5][3] = true;
+bE_vertex[5][4] = true;
+
+/*Reduction from vertexCover to clique*/
+for(ni=0; ni<nV; ni++) {
+  for(nj=0; nj<nV; nj++) {
+    if(ni == nj) {
+      bE[ni][nj] = false;
+    } else {
+      bE[ni][nj] = !bE_vertex[ni][nj];
+    }
+  }
+}
+
+nK = nV - nK_vertex_cover;
+
+
+nCount = 0;
+b = true;
+for(ni=0; ni<nV; ni++) {
+  nCount += ite(bBelongs[ni], 1, 0);
+  for(nj=ni+1; nj<nV; nj++) {
+    b &&= ite(bBelongs[ni] && bBelongs[nj], (bE[ni][nj] || bE[nj][ni]), true);
+  }
+}
+assert_all(b && nCount >= nK);
