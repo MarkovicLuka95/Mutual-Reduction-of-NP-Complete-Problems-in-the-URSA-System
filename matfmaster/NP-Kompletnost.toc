@@ -1,0 +1,18 @@
+\selectlanguage *{serbian}
+\selectlanguage *[script=Cyrillic]{serbian}
+\contentsline {chapter}{\chapternumberline {1}Увод}{1}{chapter.1}%
+\contentsline {chapter}{\chapternumberline {2}Разрада}{2}{chapter.2}%
+\contentsline {section}{\numberline {2.1}НП-Комплетност}{2}{section.2.1}%
+\contentsline {subsection}{Редукција}{2}{section*.2}%
+\contentsline {subsection}{Класе сложености}{3}{section*.3}%
+\contentsline {subsection}{Проблем задовољивости (SAT)}{4}{section*.4}%
+\contentsline {section}{\numberline {2.2}URSA језик за свођење проблема на САТ}{4}{section.2.2}%
+\contentsline {subsection}{Спецификација језика и архитектура система}{5}{section*.5}%
+\contentsline {subsection}{Разлози избора УРСА система}{5}{section*.6}%
+\contentsline {subsection}{Предности у формалном изражавању проблема}{6}{section*.7}%
+\contentsline {subsection}{Практичне предности система}{6}{section*.8}%
+\contentsline {section}{\numberline {2.3}Свођење НП-комплетних проблема}{7}{section.2.3}%
+\contentsline {subsection}{Узајамно свођење проблема САТ и Клике}{7}{section*.9}%
+\contentsline {subsection}{Свођење проблема Клике на проблем Покривача грана}{7}{section*.10}%
+\contentsline {subsection}{Узајамно свођење проблема Покривача грана и Dominantnog skupa}{7}{section*.11}%
+\contentsline {chapter}{\chapternumberline {3}Закључак}{8}{chapter.3}%
